@@ -1,17 +1,20 @@
 
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
+import useAuthcontext from './hooks/useAuthcontext'
 
 
-// pages & components
+
 import Home from './pages/home/Home'
 import Login from './pages/login/Login'
 import Signup from './pages/signup/Signup'
 import Navbar from './components/Navbar.jsx'
 
 function App() {
+  const {user,authIsReady} = useAuthcontext()
+
   return (
     <div className="App">
-      <BrowserRouter>
+{      authIsReady &&( <BrowserRouter>
         <Navbar />
           <Switch>
           
@@ -28,7 +31,7 @@ function App() {
             </Route>
             
           </Switch>
-      </BrowserRouter>
+      </BrowserRouter>)}
     </div>
   );
 }
