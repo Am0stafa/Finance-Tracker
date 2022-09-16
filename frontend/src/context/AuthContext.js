@@ -18,7 +18,7 @@ export const authReducer = (state, action) => {
       default:
         return state
     }
-  }
+}
 
 export const AuthContext = createContext(init);
 

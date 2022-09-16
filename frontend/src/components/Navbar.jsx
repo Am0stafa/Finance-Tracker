@@ -7,8 +7,7 @@ import useLogout from '../hooks/useLogout'
 const Navbar = () => {
   const {user} = useAuthcontext()
   const {logout} = useLogout()
-  console.log(user)
-  console.log(user?.displayName)
+
   return (
     <nav className={styles.navbar}>
       <ul>
