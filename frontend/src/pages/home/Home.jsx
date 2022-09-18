@@ -7,7 +7,7 @@ import useCollection from '../../hooks/useCollection'
 
 const Home = () => {
   const {user} = useAuthcontext()
-  const { documents, error } = useCollection('transactions')
+  const { documents, error } = useCollection('transactions', ["uid", "==", user.uid],['createdAt', 'desc'])
   console.log(documents)
 
   return (
