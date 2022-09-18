@@ -14,25 +14,28 @@ function App() {
 
   return (
     <div className="App">
-{      authIsReady &&( <BrowserRouter>
-        <Navbar />
-          <Switch>
-          
-            <Route exact path="/">
-             {user ? <Home /> :<Redirect to="/login" />}
-            </Route>
+       {authIsReady && (
+         <BrowserRouter>
+          <Navbar />
+            <Switch>
             
-            <Route exact path="/login">
-             {!user && <Login />}
-             {user && <Redirect to="/" />}
-            </Route>
-            
-            <Route exact path="/signup">
-             {!user ? <Signup /> :<Redirect to="/" />}
-            </Route>
-            
-          </Switch>
-      </BrowserRouter>)}
+              <Route exact path="/">
+               {user ? <Home /> :<Redirect to="/login" />}
+              </Route>
+              
+              <Route exact path="/login">
+               {!user && <Login />}
+               {user && <Redirect to="/" />}
+              </Route>
+              
+              <Route exact path="/signup">
+               {!user ? <Signup /> :<Redirect to="/" />}
+              </Route>
+              
+            </Switch>
+        </BrowserRouter>
+      )
+      }
     </div>
   );
 }
