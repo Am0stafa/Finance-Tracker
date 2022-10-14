@@ -1,0 +1,9 @@
+//! if we navigate away this fire
+
+//! if we navigate away this fire and we dont want to update the local state if this happens
+
+//! reset the form fields
+
+//! this is a solution rather than using local storage to store the user
+
+//! this means that we are using it outside the scope of the context
